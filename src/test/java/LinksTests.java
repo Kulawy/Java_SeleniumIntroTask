@@ -7,6 +7,11 @@ import org.testng.annotations.Test;
 
 public class LinksTests extends BaseSeleniumTest{
 
+    @BeforeMethod
+    public void setUpSpec(){
+        chromeDriver.get("http://toolsqa.com/automation-practice-form/");
+    }
+
     @Test
     public void firstLinkClickUrlTest(){
         String pathShouldBe = "http://toolsqa.com/automation-practice-form/";

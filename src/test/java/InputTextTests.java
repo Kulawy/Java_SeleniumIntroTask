@@ -14,6 +14,7 @@ public class InputTextTests extends BaseSeleniumTest{
 
     @BeforeMethod
     public void setAllUp(){
+        chromeDriver.get("http://toolsqa.com/automation-practice-form/");
         inputFirtName = chromeDriver.findElement(By.cssSelector("input[name='firstname']"));
         inputLastName = chromeDriver.findElement(By.cssSelector("input[name='lastname']"));
         inputDataPicker = chromeDriver.findElement(By.id("datepicker"));

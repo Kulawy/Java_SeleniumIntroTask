@@ -11,7 +11,6 @@ import org.testng.annotations.Test;
 public class BaseSeleniumTest {
 
     private static final String _DRIVERPATH= "src/main/resources/chromedriver.exe";
-
     protected WebDriver chromeDriver;
 
     @BeforeMethod
@@ -28,4 +27,5 @@ public class BaseSeleniumTest {
     public void tearDown(){
         chromeDriver.quit();
     }
+
 }

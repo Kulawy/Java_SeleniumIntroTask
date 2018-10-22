@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -10,6 +11,12 @@ import java.util.Random;
 public class FormTests extends BaseSeleniumTest{
 
     Random rnd = new Random();
+
+    @BeforeMethod
+    public void setUpSpec(){
+        chromeDriver.get("http://toolsqa.com/automation-practice-form/");
+    }
+
     @Test
     public void writeAForm(){
         WebElement inputFirtName = chromeDriver.findElement(By.cssSelector("input[name='firstname']"));

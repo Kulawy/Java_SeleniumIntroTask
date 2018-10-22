@@ -1,6 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.Random;
@@ -8,6 +9,11 @@ import java.util.Random;
 public class RadioInputTest extends BaseSeleniumTest {
 
     Random rnd = new Random();
+
+    @BeforeMethod
+    public void setUpSpec(){
+        chromeDriver.get("http://toolsqa.com/automation-practice-form/");
+    }
 
     @Test
     public void sexRadioButtonMaleTest(){

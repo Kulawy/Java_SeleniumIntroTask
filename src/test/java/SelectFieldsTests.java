@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.Random;
@@ -9,6 +10,11 @@ import java.util.Random;
 public class SelectFieldsTests extends BaseSeleniumTest {
 
     Random rnd = new Random();
+
+    @BeforeMethod
+    public void setUpSpec(){
+        chromeDriver.get("http://toolsqa.com/automation-practice-form/");
+    }
 
     @Test
     public void continentsSelectFieldTest(){
