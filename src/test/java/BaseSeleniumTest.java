@@ -20,7 +20,6 @@ public class BaseSeleniumTest {
         options.addArguments("start-maximized");
         options.addArguments("disable-extensions");
         chromeDriver = new ChromeDriver(options);
-        chromeDriver.get("http://toolsqa.com/automation-practice-form/");
     }
 
     @AfterMethod

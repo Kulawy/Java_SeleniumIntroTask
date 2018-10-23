@@ -48,6 +48,8 @@ public class AlertsTests extends BaseSeleniumTest{
 
     @Test
     public void promptAlertTest(){
+
+        //((JavascriptExecutor)chromeDriver).executeScript("scroll(0,400)");  // scroll
         buttonElement = chromeDriver.findElement(By.cssSelector("button[onclick='promptConfirm()']"));
         ((JavascriptExecutor) chromeDriver).executeScript("arguments[0].click()", buttonElement);
 
