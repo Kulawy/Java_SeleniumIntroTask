@@ -48,7 +48,7 @@ public class AlertsTests extends BaseSeleniumTest{
 
     @Test
     public void promptAlertTest(){
-        buttonElement = chromeDriver.findElement(By.xpath("//*[@id='content']/p[16]/button"));
+        buttonElement = chromeDriver.findElement(By.cssSelector("button[onclick='promptConfirm()']"));
         ((JavascriptExecutor) chromeDriver).executeScript("arguments[0].click()", buttonElement);
 
         Alert promptAlert  = chromeDriver.switchTo().alert();

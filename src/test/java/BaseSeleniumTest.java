@@ -28,4 +28,12 @@ public class BaseSeleniumTest {
         chromeDriver.quit();
     }
 
+    protected void mySleep(int valInMiliSeconds){
+        try {
+            Thread.sleep(valInMiliSeconds);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
