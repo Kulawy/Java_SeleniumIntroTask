@@ -12,9 +12,11 @@ public class IFrameTests extends BaseSeleniumTest{
 
     @BeforeMethod
     public void setUpSpec(){
-        chromeDriver.get("http://toolsqa.com/iframe-practice-page/");
+        chromeDriver.get("http://toolsqa.com/");
+        chromeDriver.findElement(By.xpath("//ul[@id='primary-menu']//span[contains(@class,'menu-text')][.='DEMO SITES']")).click();
         chromeDriver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        mySleep(2000);
+        chromeDriver.findElement(By.xpath("//a[contains(@class,'ripple')][.='IFrame practice page']")).click();
+        chromeDriver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 
     }
 
