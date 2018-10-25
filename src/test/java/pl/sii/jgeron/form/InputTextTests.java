@@ -1,12 +1,14 @@
+package pl.sii.jgeron.form;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import pl.sii.jgeron.BaseSeleniumTest;
 
-public class InputTextTests extends BaseSeleniumTest{
+public class InputTextTests extends BaseSeleniumTest {
 
     WebElement inputFirtName ;
     WebElement inputLastName ;

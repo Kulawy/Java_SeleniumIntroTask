@@ -1,3 +1,5 @@
+package pl.sii.jgeron;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -6,12 +8,10 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.security.Key;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 
-public class TabTests extends BaseSeleniumTest{
+public class SwitchTests extends BaseSeleniumTest{
 
 
     @BeforeMethod

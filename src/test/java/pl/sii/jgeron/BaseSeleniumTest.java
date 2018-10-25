@@ -1,4 +1,4 @@
-package Table;
+package pl.sii.jgeron;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,13 +10,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class TableTests {
+public class BaseSeleniumTest {
 
     private static final String _DRIVERPATH= "src/main/resources/chromedriver.exe";
-
     protected WebDriver chromeDriver;
 
     @BeforeMethod
@@ -26,7 +22,6 @@ public class TableTests {
         options.addArguments("start-maximized");
         options.addArguments("disable-extensions");
         chromeDriver = new ChromeDriver(options);
-        chromeDriver.get("http://toolsqa.com/automation-practice-table/");
     }
 
     @AfterMethod
@@ -34,18 +29,12 @@ public class TableTests {
         chromeDriver.quit();
     }
 
-    @Test
-    public void tableTest(){
-        List<WebElement> rowsList = chromeDriver.findElements(By.cssSelector("table[summary='Sample Table'] tbody tr"));
-        List<RowItem> columnsList = new ArrayList<RowItem>();
-        for(WebElement row: rowsList){
-            columnsList.add(new RowItem(row));
+    protected void mySleep(int valInMiliSeconds){
+        try {
+            Thread.sleep(valInMiliSeconds);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
-        for (RowItem oneRow: columnsList){
-            System.out.println(oneRow);
-        }
-        Assert.assertEquals(columnsList.get(0).getHeight(),"829m");
-
     }
 
 }

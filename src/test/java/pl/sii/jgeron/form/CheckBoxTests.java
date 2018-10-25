@@ -1,10 +1,11 @@
+package pl.sii.jgeron.form;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import pl.sii.jgeron.BaseSeleniumTest;
 
 import java.util.Random;
 
