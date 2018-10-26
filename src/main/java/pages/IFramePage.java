@@ -17,8 +17,6 @@ import java.util.List;
 
 public class IFramePage extends BasePage {
 
-    MainMenuPage _main;
-
     public IFramePage(WebDriver driver, MainMenuPage main) {
         super(driver);
         _main = main;
@@ -35,8 +33,6 @@ public class IFramePage extends BasePage {
     private WebElement submitInFrameOne;
     @FindBy ( css = "p.visible-xs a[rel='bookmark']" )
     private WebElement bookmarkInFrameTwo;
-    @FindBy ( css = "li.menu-item-home a[class='ripple']" )
-    private WebElement homeMainMenu;
 
     public IFramePage firstCaseStep(){
         _driver.switchTo().frame(frameOne);
@@ -52,10 +48,9 @@ public class IFramePage extends BasePage {
         return this;
     }
 
-    public IFramePage thirdCaseStep(){
-        //_main.openHome();
+    public IFramePage openHomeMethod(){
         ((JavascriptExecutor)_driver).executeScript("window.scrollTo(0, 0)");
-        clickElement(homeMainMenu);
+        _main.openHome();
         WebDriverWait wait = new WebDriverWait(_driver, 6);
         wait.until(ExpectedConditions.urlToBe("http://toolsqa.com/"));
         return this;

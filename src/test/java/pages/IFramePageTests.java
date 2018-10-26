@@ -11,7 +11,7 @@ public class IFramePageTests extends BasePageTests {
     IFramePage iFramePage;
 
     @BeforeMethod
-    public void setUpForm(){
+    public void setUpIFrame(){
         _main = new MainMenuPage(chromeDriver);
         _main.openDemoSites();
         demoSites = new DemoSitesPage(chromeDriver);
@@ -28,7 +28,7 @@ public class IFramePageTests extends BasePageTests {
     public void wholeTest(){
         iFramePage.firstCaseStep()
                 .secondCaseStep()
-                .thirdCaseStep()
+                .openHomeMethod()
                 .verifyUrlAfterThirdCase();
     }
 
